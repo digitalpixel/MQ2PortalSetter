@@ -1,3 +1,6 @@
+May 18, 2014 9:40 AM
+--------------------
+
 * Change window to show up on top of all other windows.
 * Fix issue where the portal window opened when you first logged in.
 
