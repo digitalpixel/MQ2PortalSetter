@@ -494,7 +494,7 @@ PLUGIN_API VOID OnPulse(VOID)
 	if (!pluginEnabled) return;
 	DWORD currentTick = GetTickCount();
 	if (currentTick < nextCommandAtTick) return;
-	if (pCPortalSetterWindow == NULL) return;
+	if (!pCPortalSetterWindow) return;
 	if (((PCSIDLWND)pMerchantWnd)->dShow == 1) {
 		if (currentRoutineStep < 4) {
 			if(pCPortalSetterWindow->dShow == 0 && inPortalMerchantRange()) {
