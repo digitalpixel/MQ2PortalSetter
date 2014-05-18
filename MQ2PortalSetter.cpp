@@ -80,8 +80,7 @@ class CPortalSetterWindow : public CCustomWnd {
 
 int CPortalSetterWindow::WndNotification(CXWnd *pWnd, unsigned int Message, void *unknown) {    
   if (pWnd==0) {
-    if (Message==XWM_CLOSE)
-    {
+    if (Message==XWM_CLOSE) {
         dShow=1;
         return 1;
     }
