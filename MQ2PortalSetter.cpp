@@ -333,6 +333,7 @@ CPortalSetterWindow *pCPortalSetterWindow=0;
 void CreatePortalSetterWindow() {
 	if (pCPortalSetterWindow) return;
 	pCPortalSetterWindow = new CPortalSetterWindow("PortalSetterWindow");
+	pCPortalSetterWindow->dShow = 0;
 };
 
 void DestroyPortalSetterWindow() {
