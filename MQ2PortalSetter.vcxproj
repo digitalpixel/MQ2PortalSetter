@@ -70,7 +70,8 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(SolutionDir)Release\$(ProjectName).dll" "C:\MacroQuest2\$(ProjectName).dll"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
