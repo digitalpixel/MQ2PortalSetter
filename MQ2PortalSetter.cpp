@@ -334,6 +334,7 @@ void CreatePortalSetterWindow() {
 	if (pCPortalSetterWindow) return;
 	pCPortalSetterWindow = new CPortalSetterWindow("PortalSetterWindow");
 	pCPortalSetterWindow->dShow = 0;
+	pCPortalSetterWindow->ZLayer = 9999;
 };
 
 void DestroyPortalSetterWindow() {
