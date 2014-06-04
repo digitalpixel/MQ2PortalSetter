@@ -339,11 +339,8 @@ void DestroyPortalSetterWindow() {
 };
 
 static char* getPortalVendorName() {
-  if (GetCharInfo()->zoneId == 345) {
-    return "Zeflmin_Werlikanin00";
-  } else if (GetCharInfo()->zoneId == 33505) {
-    return "Teleportation_Assistant00";
-  }
+  if (GetCharInfo()->zoneId == 345) return "Zeflmin_Werlikanin00";
+  return "Teleportation_Assistant00";
 }
 
 static bool inPortalMerchantRange() {
