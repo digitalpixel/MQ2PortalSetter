@@ -355,6 +355,17 @@ static bool inPortalMerchantRange() {
   return false;
 }
 
+static bool inGuildHall() {
+  switch (GetCharInfo()->zoneId) {
+    case 345: return true;
+    case 737: return true;
+    case 738: return true;
+    case 751: return true;
+    case 33505: return true;
+    default: return false;
+  }
+}
+
 static void setPortal() {
   if (currentRoutineStep == 1) {
     if (GetCharInfo2()->pInventoryArray->Inventory.Cursor) {
@@ -460,7 +471,7 @@ PLUGIN_API VOID SetGameState(DWORD GameState)
 {
   DebugSpewAlways("MQ2PortalSetter::SetGameState()");
   if (gGameState == GAMESTATE_INGAME) {
-    if(GetCharInfo()->zoneId == 345 || GetCharInfo()->zoneId == 33505) {
+    if(inGuildHall()) {
       if (!pluginEnabled) {
         pluginEnabled = true;
       }
