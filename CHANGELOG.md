@@ -1,3 +1,8 @@
+June 5, 2014 12:45 AM
+---------------------
+
+* Fix plugin to work in all guild hall zones
+
 May 18, 2014 9:40 AM
 --------------------
 

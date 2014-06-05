@@ -1,6 +1,6 @@
 // Project: MQ2PortalSetter
 // Author: DigitalPixel
-// Version: May 18, 2014 9:40 AM
+// Version: June 5, 2014 12:45 AM
 #include "../MQ2Plugin.h"
 
 PreSetup("MQ2PortalSetter");
