@@ -1,3 +1,8 @@
+June 5, 2014 4:07 AM
+--------------------
+
+* Add support for additional guild halls
+
 June 5, 2014 12:45 AM
 ---------------------
 
