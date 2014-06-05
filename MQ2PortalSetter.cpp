@@ -339,16 +339,19 @@ void DestroyPortalSetterWindow() {
 };
 
 static char* getPortalVendorName() {
-  if (GetCharInfo()->zoneId == 345) return "Zeflmin_Werlikanin00";
-  return "Teleportation_Assistant00";
+  if (GetCharInfo()->zoneId == 345) return "Zeflmin Werlikanin";
+  return "Teleportation Assistant";
+}
+
+static double getPortalMerchantDistance() {
+  char zPortalMerchantDistance[MAX_STRING];
+  sprintf(zPortalMerchantDistance, "${Spawn[%s].Distance}", getPortalVendorName());
+  ParseMacroData(zPortalMerchantDistance);
+  return atof(zPortalMerchantDistance);
 }
 
 static bool inPortalMerchantRange() {
-  if(GetSpawnByName(getPortalVendorName())) {
-    if (DistanceToSpawn(GetCharInfo()->pSpawn, GetSpawnByName(getPortalVendorName())->Data.pSpawn) < 20) {
-      return true;
-    }
-  }
+  if (getPortalMerchantDistance() < 20.0f) return true;
   return false;
 }
 
