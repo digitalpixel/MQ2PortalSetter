@@ -356,14 +356,8 @@ static bool inPortalMerchantRange() {
 }
 
 static bool inGuildHall() {
-  switch (GetCharInfo()->zoneId) {
-    case 345: return true;
-    case 737: return true;
-    case 738: return true;
-    case 751: return true;
-    case 33505: return true;
-    default: return false;
-  }
+  if(strstr(((PZONEINFO)pZoneInfo)->LongName, "Guild Hall") != NULL) return true;
+  return false;
 }
 
 static void setPortal() {
