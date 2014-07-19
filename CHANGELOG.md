@@ -1,3 +1,8 @@
+July 19, 2014 3:20 PM
+---------------------
+
+* Change in guild hall detection from id based to name based.
+
 June 5, 2014 4:07 AM
 --------------------
 
