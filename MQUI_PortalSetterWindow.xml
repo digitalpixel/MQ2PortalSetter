@@ -44,7 +44,7 @@
 
 	<!-- Argath Button -->
 	<Button item="ArgathButton">
-		<ScreenID>ShardsLandingButton</ScreenID>
+		<ScreenID>ArgathButton</ScreenID>
 		<Location>
 			<X>10</X>
 			<Y>78</Y>
