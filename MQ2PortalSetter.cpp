@@ -376,7 +376,7 @@ static void setPortal() {
   switch (currentRoutineStep) {
     case 1: { 
       char zStoneListPosition[MAX_STRING];
-      sprintf(zStoneListPosition, "${Window[MerchantWnd].Child[MW_ItemList].List[%s,2]}", portalStoneName);
+      sprintf(zStoneListPosition, "${Window[MerchantWnd].Child[MW_ItemList].List[=%s,2]}", portalStoneName);
       ParseMacroData(zStoneListPosition);
       SendListSelect("MerchantWnd", "MW_ItemList", (atoi(zStoneListPosition) - 1)); 
       currentRoutineStep++;
