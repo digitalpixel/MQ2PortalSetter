@@ -18,38 +18,40 @@ class CPortalSetterWindow : public CCustomWnd {
  public:
   CPortalSetterWindow(char *Template):CCustomWnd(Template) {
     SetWndNotification(CPortalSetterWindow);
-    westKarana_button       = (CButtonWnd*)GetChildItem("WestKaranaButton");
-    shardsLanding_button    = (CButtonWnd*)GetChildItem("ShardsLandingButton");
-    argath_button           = (CButtonWnd*)GetChildItem("ArgathButton");
-    guildBanner_button      = (CButtonWnd*)GetChildItem("GuildBannerButton");
-    feerrott_button         = (CButtonWnd*)GetChildItem("FeerrottButton");
-    brellsRest_button       = (CButtonWnd*)GetChildItem("BrellsRestButton");
-    dragonscaleHills_button = (CButtonWnd*)GetChildItem("DragonscaleHillsButton");
-    planeOfTime_button      = (CButtonWnd*)GetChildItem("PlaneOfTimeButton");
-    kattaCastrum_button     = (CButtonWnd*)GetChildItem("KattaCastrumButton");
-    gorukarMesa_button      = (CButtonWnd*)GetChildItem("GorukarMesaButton");
-    arcstone_button         = (CButtonWnd*)GetChildItem("ArcstoneButton");
-    planeOfSky_button       = (CButtonWnd*)GetChildItem("PlaneOfSkyButton");
-    cobaltScar_button       = (CButtonWnd*)GetChildItem("CobaltScarButton");
-    planeOfHate_button      = (CButtonWnd*)GetChildItem("PlaneOfHateButton");
-    barindu_button          = (CButtonWnd*)GetChildItem("BarinduButton");
-    wallOfSlaughter_button  = (CButtonWnd*)GetChildItem("WallOfSlaughterButton");
-    twilightSea_button      = (CButtonWnd*)GetChildItem("TwilightSeaButton");
-    undershore_button       = (CButtonWnd*)GetChildItem("UndershoreButton");
-    dreadlands_button       = (CButtonWnd*)GetChildItem("DreadlandsButton");
-    stonebrunt_button       = (CButtonWnd*)GetChildItem("StonebruntButton");
-    icecladOcean_button     = (CButtonWnd*)GetChildItem("IcecladOceanButton");
-    lavastorm_button        = (CButtonWnd*)GetChildItem("LavastormButton");
-    toxxulia_button         = (CButtonWnd*)GetChildItem("ToxxuliaButton");
-    northKarana_button      = (CButtonWnd*)GetChildItem("NorthKaranaButton");
-    commonlands_button      = (CButtonWnd*)GetChildItem("CommonlandsButton");
-    greaterFaydark_button   = (CButtonWnd*)GetChildItem("GreaterFaydarkButton");
+    kattaCastrumDeluge_button = (CButtonWnd*)GetChildItem("KattaCastrumDelugeButton");
+    westKarana_button         = (CButtonWnd*)GetChildItem("WestKaranaButton");
+    shardsLanding_button      = (CButtonWnd*)GetChildItem("ShardsLandingButton");
+    argath_button             = (CButtonWnd*)GetChildItem("ArgathButton");
+    guildBanner_button        = (CButtonWnd*)GetChildItem("GuildBannerButton");
+    feerrott_button           = (CButtonWnd*)GetChildItem("FeerrottButton");
+    brellsRest_button         = (CButtonWnd*)GetChildItem("BrellsRestButton");
+    dragonscaleHills_button   = (CButtonWnd*)GetChildItem("DragonscaleHillsButton");
+    planeOfTime_button        = (CButtonWnd*)GetChildItem("PlaneOfTimeButton");
+    kattaCastrum_button       = (CButtonWnd*)GetChildItem("KattaCastrumButton");
+    gorukarMesa_button        = (CButtonWnd*)GetChildItem("GorukarMesaButton");
+    arcstone_button           = (CButtonWnd*)GetChildItem("ArcstoneButton");
+    planeOfSky_button         = (CButtonWnd*)GetChildItem("PlaneOfSkyButton");
+    cobaltScar_button         = (CButtonWnd*)GetChildItem("CobaltScarButton");
+    planeOfHate_button        = (CButtonWnd*)GetChildItem("PlaneOfHateButton");
+    barindu_button            = (CButtonWnd*)GetChildItem("BarinduButton");
+    wallOfSlaughter_button    = (CButtonWnd*)GetChildItem("WallOfSlaughterButton");
+    twilightSea_button        = (CButtonWnd*)GetChildItem("TwilightSeaButton");
+    undershore_button         = (CButtonWnd*)GetChildItem("UndershoreButton");
+    dreadlands_button         = (CButtonWnd*)GetChildItem("DreadlandsButton");
+    stonebrunt_button         = (CButtonWnd*)GetChildItem("StonebruntButton");
+    icecladOcean_button       = (CButtonWnd*)GetChildItem("IcecladOceanButton");
+    lavastorm_button          = (CButtonWnd*)GetChildItem("LavastormButton");
+    toxxulia_button           = (CButtonWnd*)GetChildItem("ToxxuliaButton");
+    northKarana_button        = (CButtonWnd*)GetChildItem("NorthKaranaButton");
+    commonlands_button        = (CButtonWnd*)GetChildItem("CommonlandsButton");
+    greaterFaydark_button     = (CButtonWnd*)GetChildItem("GreaterFaydarkButton");
   }
 
   ~CPortalSetterWindow() {}
 
   int WndNotification(CXWnd *pWnd, unsigned int Message, void *unknown);
 
+  CButtonWnd *kattaCastrumDeluge_button;
   CButtonWnd *westKarana_button;
   CButtonWnd *shardsLanding_button;
   CButtonWnd *argath_button;
@@ -85,7 +87,16 @@ int CPortalSetterWindow::WndNotification(CXWnd *pWnd, unsigned int Message, void
         return 1;
     }
   }
-  if (pWnd==(CXWnd*)westKarana_button) {
+  if (pWnd==(CXWnd*)kattaCastrumDeluge_button) {
+    if(Message==XWM_LCLICK) {
+      #ifdef MQ2PORTALSETTER_DEBUG
+      WriteChatf("PortalSetterWindow::kattaCastrumDeluge_button - LCLICK");
+      #endif
+      sprintf(portalStoneName, "Drowned Katta Castrum Powerstone");
+      currentRoutineStep = 1;
+      setPortal();
+    }
+  } else if (pWnd==(CXWnd*)westKarana_button) {
     if(Message==XWM_LCLICK) {
       #ifdef MQ2PORTALSETTER_DEBUG
       WriteChatf("PortalSetterWindow::westKarana_button - LCLICK");
