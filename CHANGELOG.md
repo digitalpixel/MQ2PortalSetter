@@ -1,3 +1,9 @@
+October 31, 2014 6:45 PM
+------------------------
+
+* Fix issue where wrong Katta Castrum stone was chosen.
+* Added new button for Katta Castrum: Deluge.
+
 July 19, 2014 3:20 PM
 ---------------------
 
